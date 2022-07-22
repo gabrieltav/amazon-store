@@ -6,28 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AmazonStore</title>
     <link rel="stylesheet" href="../css/styles.css" />
-
-    <script type="text/javascript">
-        function adicionar()
-        {
-            localStorage.setItem("nome", nome.value, "email", email.value);
-            alert("Ites adicionados.");
-            nome.value =  "";
-
-            localStorage.setItem("email", email.value);
-            email.value = "";
-
-            localStorage.setItem("telefone", telefone.value);
-            telefone.value = "";
-
-            localStorage.setItem("assunto", assunto.value);
-            assunto.value = "";
-
-            localStorage.setItem("mensagem", mensagem.value);
-            mensagem.value = "";
-        }
-    </script>
-
   </head>
   <body>
     <header>
@@ -203,19 +181,19 @@
         <form class="form-contact">
             <div>
                 <label for="nome" id="keynome">Nome:</label>
-                <input placeholder="Insira seu nome" type="text" name="nome" id="nome">
+                <input placeholder="Insira seu nome" type="text" name="nome" id="nomeContato">
             </div>
             <div>
                 <label for="email">E-mail:</label>
-                <input placeholder="Insira seu e-mail" type="text" name="email" id="email">
+                <input placeholder="Insira seu e-mail" type="text" name="email" id="emailContato">
             </div>
             <div>
                 <label for="telefone">Telefone:</label>
-                <input placeholder="Insira seu telefone" type="text" name="telefone" id="telefone">
+                <input placeholder="Insira seu telefone" type="text" name="telefone" id="telefoneContato">
             </div>
             <div>
                 <label for="assunto">Assunto:</label>
-                <select name="assunto" id="assunto" >
+                <select name="assunto" id="assuntoContato" >
                     <option selected disabled>Selecione uma opção</option>
                     <option value="comercial">Comercial</option>
                     <option value="tecnico">Técnico</option>
@@ -224,13 +202,14 @@
             </div>
             <div>
                 <label for="mensagem">Mensagem:</label>
-                <input placeholder="Insira uma mensagem" type="text" name="mensagem" id="mensagem">
+                <input placeholder="Insira uma mensagem" type="text" name="mensagem" id="mensagemContato">
             </div>
             
-            <button type="submit" id="btnAdicionar1" onclick="adicionar()">Enviar</button>
+            <button type="submit" value="Enviar" onclick="adicionar()">Enviar</button>
         </form>
       </div>
     </section>
+    <script src="../src/localStorage.js"></script>
 
     <section class="container-cadastro" id="cadastro">
         <div class="content-contact">
@@ -241,28 +220,28 @@
           <form class="form-contact">
               <div>
                   <label for="nome">Nome:</label>
-                  <input placeholder="Insira seu nome" type="text" name="nome" id="txtName">
+                  <input placeholder="Insira seu nome" type="text" name="nome" id="nomeCadastro">
               </div>
 
               <div>
                   <label for="email">E-mail:</label>
-                  <input placeholder="Insira seu e-mail" type="text" name="email" id="txtEmail">
+                  <input placeholder="Insira seu e-mail" type="text" name="email" id="emailCadastro">
               </div>
               <div>
                   <label for="telefone">Telefone:</label>
-                  <input placeholder="Insira seu telefone" type="text" name="telefone" id="txtPhone">
+                  <input placeholder="Insira seu telefone" type="text" name="telefone" id="telefoneCadastro">
               </div>
               <div>
                 <label for="endereco">Endereço:</label>
-                <input placeholder="Insira seu endereço" type="text" name="endereco" id="txtEndereco">
+                <input placeholder="Insira seu endereço" type="text" name="endereco" id="enderecoCadastro">
             </div>
             <div>
                 <label for="nascimento">Data de Nascimento:</label>
-                <input placeholder="Insira sua data de nascimento" type="text" name="nascimento" id="txtData">
+                <input placeholder="Insira sua data de nascimento" type="text" name="nascimento" id="dataCadastro">
             </div>
               <div>
                   <label for="sexo">Sexo:</label>
-                  <select name="sexo" id="textSexo" >
+                  <select name="sexo" id="sexoCadastro" >
                       <option selected disabled>Selecione uma opção</option>
                       <option value="masculino">Masculino</option>
                       <option value="feminino">Femenino</option>
@@ -270,7 +249,7 @@
               </div>
               <div>
                 <label for="cpf">CPF:</label>
-                <input placeholder="Insira seu CPF" type="text" name="cpf" id="textCpf">
+                <input placeholder="Insira seu CPF" type="text" name="cpf" id="cpfCadastro">
             </div>
               
               <button type="submit" value="Enviar" id="send">Enviar</button>

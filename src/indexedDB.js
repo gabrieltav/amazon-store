@@ -9,7 +9,7 @@ request.onupgradeneeded = function () {
   store.createIndex("Email", "Email");
   store.createIndex("Telefone", "Telefone");
   store.createIndex("Endereco", "Endereco");
-  store.createIndex("Data_Nasc", "Data_Nasc");
+  store.createIndex("DataDeNascimento", "DataDeNascimento");
   store.createIndex("Sexo", "Sexo");
   store.createIndex("CPF", "CPF");
 };
@@ -29,12 +29,12 @@ send.onclick = (event) => {
       "customers"
     )
     .add({
-      Nome: txtName.value,
-      Email: txtEmail.value,
-      Telefone: txtPhone.value,
-      Endereco: txtEndereco.value,
-      Data_Nasc: txtData.value,
-      Sexo: textSexo.value,
-      CPF: textCpf.value,
+      Nome: nomeCadastro.value,
+      Email: emailCadastro.value,
+      Telefone: telefoneCadastro.value,
+      Endereco: enderecoCadastro.value,
+      DataDeNascimento: dataCadastro.value,
+      Sexo: sexoCadastro.value,
+      CPF: cpfCadastro.value,
     });
 };

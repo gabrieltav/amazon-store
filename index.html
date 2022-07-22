@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AmazonStore</title>
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script type="text/javascript">
+        function adicionar()
+        {
+            localStorage.setItem("nome", nome.value, "email", email.value);
+            alert("Ites adicionados.");
+            nome.value =  "";
+
+            localStorage.setItem("email", email.value);
+            email.value = "";
+
+            localStorage.setItem("telefone", telefone.value);
+            telefone.value = "";
+
+            localStorage.setItem("assunto", assunto.value);
+            assunto.value = "";
+
+            localStorage.setItem("mensagem", mensagem.value);
+            mensagem.value = "";
+        }
+    </script>
+
+    <script type="text/javascript">
+        var request = indexedDB.open("usuarios");
+        request.onupgradeneeded = function()
+        {
+        // Se o banco de dados não existir ainda, cria objetos de armazenamento
+        var db = request.result;
+        var store = db.createObjectStore("customers", {keyPath: "codigo"});
+        var nomeIdx = store.createIndex("porNome", "titulo", {unique: true});
+        var fabricanteIdx = store.createIndex("porFabricante", "fabricante");
+        // Populando o banco com alguns produtos
+        store.put({codigo: 1,
+                nome: "DVD - Batman O Cavaleiro das Trevas - A Trilogia",
+            fabricante: "Warner Bros",
+            preco: 39.90});
+        store.put({codigo: 2,
+        nome: "Blu-ray - O Homem de Aço",
+            fabricante: "Warner Bros",
+            preco: 69.90});
+        store.put({codigo: 3,
+        nome: "DVD - Wolverine Imortal",
+            fabricante: "Fox",
+            preco: 19.90});
+    
+        };
+        request.onsuccess = function() {
+        db = request.result;
+    };
+    </script>
+
+  </head>
+  <body>
+    <header>
+      <div class="content">
+        <nav>
+          <p class="brand">Amazon<strong>Store</strong></p>
+          <ul>
+            <li><a href="#home">Home</a></li>   
+            <li><a href="#catalog">Produtos</a></li>
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li><a class="button-register" href="#cadastro">Cadastro</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-block">
+          <div class="text">                
+            <h2>O carro perfeito para você</h2>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia,
+              asperiores?
+            </p>
+          </div>
+          <img src="images/car-header.png" alt="Car" />
+        </div>
+      </div>
+    </header>
+    
+    <section class="catalog" id="catalog">
+      <div class="content">
+        <div class="title-wrapper-catalog">
+          <p>Encontre o que você quer</p>
+          <h3>Produtos</h3>
+        </div>
+        <div class="filter-card">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Escolha o seu modelo favorito"
+          />
+          <button class="search-button">Procurar</button>
+        </div>
+        <div class="card-wrapper">
+          <div class="card-item">
+            <img src="images/car-card.png" alt="Car" />
+            <div class="card-content">
+              <h3>Audi Supra TT</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus.
+              </p>
+              <button type="button">Eu quero isso!</button>
+            </div>
+          </div>
+          <div class="card-item">
+            <img src="images/car-card.png" alt="Car" />
+            <div class="card-content">
+              <h3>Audi Supra TT</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus.
+              </p>
+              <button type="button">Eu quero isso!</button>
+            </div>
+          </div>
+          <div class="card-item">
+            <img src="images/car-card.png" alt="Car" />
+            <div class="card-content">
+              <h3>Audi Supra TT</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus.
+              </p>
+              <button type="button">Eu quero isso!</button>
+            </div>
+          </div>
+          <div class="card-item">
+            <img src="images/car-card.png" alt="Car" />
+            <div class="card-content">
+              <h3>Audi Supra TT</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus.
+              </p>
+              <button type="button">Eu quero isso!</button>
+            </div>
+          </div>
+          <div class="card-item">
+            <img src="images/car-card.png" alt="Car" />
+            <div class="card-content">
+              <h3>Audi Supra TT</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus.
+              </p>
+              <button type="button">Eu quero isso!</button>
+            </div>
+          </div>
+          <div class="card-item">
+            <img src="images/car-card.png" alt="Car" />
+            <div class="card-content">
+              <h3>Audi Supra TT</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus.
+              </p>
+              <button type="button">Eu quero isso!</button>
+            </div>
+          </div>
+          <div class="card-item">
+            <img src="images/car-card.png" alt="Car" />
+            <div class="card-content">
+              <h3>Audi Supra TT</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus.
+              </p>
+              <button type="button">Eu quero isso!</button>
+            </div>
+          </div>
+          <div class="card-item">
+            <img src="images/car-card.png" alt="Car" />
+            <div class="card-content">
+              <h3>Audi Supra TT</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus.
+              </p>
+              <button type="button">Eu quero isso!</button>
+            </div>
+          </div>
+          <div class="card-item">
+            <img src="images/car-card.png" alt="Car" />
+            <div class="card-content">
+              <h3>Audi Supra TT</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Repellendus.
+              </p>
+              <button type="button">Eu quero isso!</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="content">
+        <div class="title-wrapper-about">
+          <p>Saiba sobre nós</p>
+          <h3>Sobre</h3>
+        </div>
+        <div class="about-content">
+          <div class="left">
+            <img src="images/about.png" alt="About" />
+          </div>
+          <div class="right">
+            <h3>Junte tecnologia e mobilidade</h3>
+            <p>
+                AmazonStore Veículos, uma empresa que nasceu em 21 de Julho 2015, está com 7 anos de atuação no mercado amazonense, é uma das maiores lojas de carros usados e seminovos do Amazonas. A AmazonStore Veículos alia seu conhecimento no setor de carros, atendendo às demandas de um consumidor cada vez mais exigente, à inovação nas diferentes formas de relacionar com seus clientes, seja em atendimento de qualidade, não apenas durante o processo de compra do veículo, mas também no pós-venda, como na constante melhora de seus produtos e serviços.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container-contact" id="contato">
+      <div class="content-contact">
+        <div class="title-contact">
+          <h3>Contato</h3>
+        </div>
+
+        <form class="form-contact">
+            <div>
+                <label for="nome" id="keynome">Nome:</label>
+                <input placeholder="Insira seu nome" type="text" name="nome" id="nome">
+            </div>
+            <div>
+                <label for="email">E-mail:</label>
+                <input placeholder="Insira seu e-mail" type="text" name="email" id="email">
+            </div>
+            <div>
+                <label for="telefone">Telefone:</label>
+                <input placeholder="Insira seu telefone" type="text" name="telefone" id="telefone">
+            </div>
+            <div>
+                <label for="assunto">Assunto:</label>
+                <select name="assunto" id="assunto" >
+                    <option selected disabled>Selecione uma opção</option>
+                    <option value="comercial">Comercial</option>
+                    <option value="tecnico">Técnico</option>
+                    <option value="outros">Outros</option>
+                </select>
+            </div>
+            <div>
+                <label for="mensagem">Mensagem:</label>
+                <input placeholder="Insira uma mensagem" type="text" name="mensagem" id="mensagem">
+            </div>
+            
+            <button type="submit" id="btnAdicionar1" onclick="adicionar()">Enviar</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="container-cadastro" id="cadastro">
+        <div class="content-contact">
+          <div class="title-contact">
+            <h3>Cadastro</h3>
+          </div>
+  
+          <form class="form-contact">
+              <div>
+                  <label for="nome">Nome:</label>
+                  <input placeholder="Insira seu nome" type="text" name="nome" id="nome-cadastro">
+              </div>
+
+              <div>
+                  <label for="email">E-mail:</label>
+                  <input placeholder="Insira seu e-mail" type="text" name="email" id="email-cadastro">
+              </div>
+              <div>
+                  <label for="telefone">Telefone:</label>
+                  <input placeholder="Insira seu telefone" type="text" name="telefone" id="telefone-cadastro">
+              </div>
+              <div>
+                <label for="endereco">Endereço:</label>
+                <input placeholder="Insira seu endereço" type="text" name="endereco" id="endereco-cadastro">
+            </div>
+            <div>
+                <label for="nascimento">Data de Nascimento:</label>
+                <input placeholder="Insira sua data de nascimento" type="text" name="nascimento" id="nascimento-cadastro">
+            </div>
+              <div>
+                  <label for="sexo">Sexo:</label>
+                  <select name="" id="" >
+                      <option selected disabled>Selecione uma opção</option>
+                      <option value="masculino">Masculino</option>
+                      <option value="feminino">Femenino</option>
+                  </select>
+              </div>
+              <div>
+                <label for="cpf">CPF:</label>
+                <input placeholder="Insira seu CPF" type="text" name="cpf" id="cpf">
+            </div>
+              
+              <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </section>
+
+    <footer>
+      <div class="main">
+        <div class="content footer-links">
+          <div class="footer-company">
+            <h4>Companhia</h4>
+            <h6>Sobre</h6>
+            <h6>Contato</h6>
+          </div>
+          <div class="footer-rental">
+            <h4>Aluguel</h4>
+            <h6>Self-Drive</h6>
+            <h6>Chauffer-Driven</h6>
+            <h6>Ajuda</h6>
+          </div>
+          <div class="footer-social">
+            <h4>Permaneça conectado</h4>
+            <div class="social-icons">
+              <img src="images/instagram.png" alt="Instagram" />
+              <img src="images/facebook.png" alt="Facebook" />
+            </div>
+          </div>
+          <div class="footer-contact">
+            <h4>Contate-nos</h4>
+            <h6>+55 92 992019607</h6>
+            <h6>contato@amazonstore.com.br</h6>
+            <h6>Av Mario Andreazza nº 1101, Itacoatiara AM</h6>
+          </div>
+        </div>
+      </div>
+      <div class="last">®AmazonStore 2022</div>
+    </footer>
+  </body>
+</html>

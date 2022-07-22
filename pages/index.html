@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AmazonStore</title>
-    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
 
     <script type="text/javascript">
         function adicionar()
@@ -26,35 +26,6 @@
             localStorage.setItem("mensagem", mensagem.value);
             mensagem.value = "";
         }
-    </script>
-
-    <script type="text/javascript">
-        var request = indexedDB.open("usuarios");
-        request.onupgradeneeded = function()
-        {
-        // Se o banco de dados não existir ainda, cria objetos de armazenamento
-        var db = request.result;
-        var store = db.createObjectStore("customers", {keyPath: "codigo"});
-        var nomeIdx = store.createIndex("porNome", "titulo", {unique: true});
-        var fabricanteIdx = store.createIndex("porFabricante", "fabricante");
-        // Populando o banco com alguns produtos
-        store.put({codigo: 1,
-                nome: "DVD - Batman O Cavaleiro das Trevas - A Trilogia",
-            fabricante: "Warner Bros",
-            preco: 39.90});
-        store.put({codigo: 2,
-        nome: "Blu-ray - O Homem de Aço",
-            fabricante: "Warner Bros",
-            preco: 69.90});
-        store.put({codigo: 3,
-        nome: "DVD - Wolverine Imortal",
-            fabricante: "Fox",
-            preco: 19.90});
-    
-        };
-        request.onsuccess = function() {
-        db = request.result;
-    };
     </script>
 
   </head>
@@ -80,7 +51,7 @@
               asperiores?
             </p>
           </div>
-          <img src="images/car-header.png" alt="Car" />
+          <img src="../images/car-header.png" alt="Car" />
         </div>
       </div>
     </header>
@@ -101,7 +72,7 @@
         </div>
         <div class="card-wrapper">
           <div class="card-item">
-            <img src="images/car-card.png" alt="Car" />
+            <img src="../images/car-card.png" alt="Car" />
             <div class="card-content">
               <h3>Audi Supra TT</h3>
               <p>
@@ -112,7 +83,7 @@
             </div>
           </div>
           <div class="card-item">
-            <img src="images/car-card.png" alt="Car" />
+            <img src="../images/car-card.png" alt="Car" />
             <div class="card-content">
               <h3>Audi Supra TT</h3>
               <p>
@@ -123,7 +94,7 @@
             </div>
           </div>
           <div class="card-item">
-            <img src="images/car-card.png" alt="Car" />
+            <img src="../images/car-card.png" alt="Car" />
             <div class="card-content">
               <h3>Audi Supra TT</h3>
               <p>
@@ -134,7 +105,7 @@
             </div>
           </div>
           <div class="card-item">
-            <img src="images/car-card.png" alt="Car" />
+            <img src="../images/car-card.png" alt="Car" />
             <div class="card-content">
               <h3>Audi Supra TT</h3>
               <p>
@@ -145,7 +116,7 @@
             </div>
           </div>
           <div class="card-item">
-            <img src="images/car-card.png" alt="Car" />
+            <img src="../images/car-card.png" alt="Car" />
             <div class="card-content">
               <h3>Audi Supra TT</h3>
               <p>
@@ -156,7 +127,7 @@
             </div>
           </div>
           <div class="card-item">
-            <img src="images/car-card.png" alt="Car" />
+            <img src="../images/car-card.png" alt="Car" />
             <div class="card-content">
               <h3>Audi Supra TT</h3>
               <p>
@@ -167,7 +138,7 @@
             </div>
           </div>
           <div class="card-item">
-            <img src="images/car-card.png" alt="Car" />
+            <img src="../images/car-card.png" alt="Car" />
             <div class="card-content">
               <h3>Audi Supra TT</h3>
               <p>
@@ -178,7 +149,7 @@
             </div>
           </div>
           <div class="card-item">
-            <img src="images/car-card.png" alt="Car" />
+            <img src="../images/car-card.png" alt="Car" />
             <div class="card-content">
               <h3>Audi Supra TT</h3>
               <p>
@@ -189,7 +160,7 @@
             </div>
           </div>
           <div class="card-item">
-            <img src="images/car-card.png" alt="Car" />
+            <img src="../images/car-card.png" alt="Car" />
             <div class="card-content">
               <h3>Audi Supra TT</h3>
               <p>
@@ -211,7 +182,7 @@
         </div>
         <div class="about-content">
           <div class="left">
-            <img src="images/about.png" alt="About" />
+            <img src="../images/about.png" alt="About" />
           </div>
           <div class="right">
             <h3>Junte tecnologia e mobilidade</h3>
@@ -270,28 +241,28 @@
           <form class="form-contact">
               <div>
                   <label for="nome">Nome:</label>
-                  <input placeholder="Insira seu nome" type="text" name="nome" id="nome-cadastro">
+                  <input placeholder="Insira seu nome" type="text" name="nome" id="txtName">
               </div>
 
               <div>
                   <label for="email">E-mail:</label>
-                  <input placeholder="Insira seu e-mail" type="text" name="email" id="email-cadastro">
+                  <input placeholder="Insira seu e-mail" type="text" name="email" id="txtEmail">
               </div>
               <div>
                   <label for="telefone">Telefone:</label>
-                  <input placeholder="Insira seu telefone" type="text" name="telefone" id="telefone-cadastro">
+                  <input placeholder="Insira seu telefone" type="text" name="telefone" id="txtPhone">
               </div>
               <div>
                 <label for="endereco">Endereço:</label>
-                <input placeholder="Insira seu endereço" type="text" name="endereco" id="endereco-cadastro">
+                <input placeholder="Insira seu endereço" type="text" name="endereco" id="txtEndereco">
             </div>
             <div>
                 <label for="nascimento">Data de Nascimento:</label>
-                <input placeholder="Insira sua data de nascimento" type="text" name="nascimento" id="nascimento-cadastro">
+                <input placeholder="Insira sua data de nascimento" type="text" name="nascimento" id="txtData">
             </div>
               <div>
                   <label for="sexo">Sexo:</label>
-                  <select name="" id="" >
+                  <select name="sexo" id="textSexo" >
                       <option selected disabled>Selecione uma opção</option>
                       <option value="masculino">Masculino</option>
                       <option value="feminino">Femenino</option>
@@ -299,13 +270,15 @@
               </div>
               <div>
                 <label for="cpf">CPF:</label>
-                <input placeholder="Insira seu CPF" type="text" name="cpf" id="cpf">
+                <input placeholder="Insira seu CPF" type="text" name="cpf" id="textCpf">
             </div>
               
-              <button type="submit">Enviar</button>
+              <button type="submit" value="Enviar" id="send">Enviar</button>
           </form>
         </div>
       </section>
+
+      <script src="../src/indexedDB.js"></script>
 
     <footer>
       <div class="main">
@@ -324,8 +297,8 @@
           <div class="footer-social">
             <h4>Permaneça conectado</h4>
             <div class="social-icons">
-              <img src="images/instagram.png" alt="Instagram" />
-              <img src="images/facebook.png" alt="Facebook" />
+              <img src="../images/instagram.png" alt="Instagram" />
+              <img src="../images/facebook.png" alt="Facebook" />
             </div>
           </div>
           <div class="footer-contact">
